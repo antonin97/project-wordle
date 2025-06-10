@@ -7,6 +7,7 @@ import TextInput from "../TextInput";
 import UserGuesses from "../UserGuesses";
 import WinBanner from "../WinBanner";
 import LoseBanner from "../LoseBanner";
+import Keyboard from "../Keyboard";
 
 import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
 
@@ -49,6 +50,7 @@ function Game() {
     return (
         <>
             <UserGuesses guesses={guesses} answer={answer} />
+            <Keyboard guesses={guesses} answer={answer} />
             <TextInput handleGuess={handleGuesses} gameOutcome={gameOutcome} />
             {gameOutcome === 1 ? (
                 <WinBanner numOfGuesses={guesses.length} restart={restart} />
