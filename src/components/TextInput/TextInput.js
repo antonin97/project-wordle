@@ -1,6 +1,6 @@
 import React from "react";
 
-function TextInput({ handleGuess }) {
+function TextInput({ handleGuess, gameOutcome }) {
     const [currentGuess, setCurrentGuess] = React.useState("");
 
     return (
@@ -18,6 +18,7 @@ function TextInput({ handleGuess }) {
             <label htmlFor="guess-input">Enter guess:</label>
             <input
                 id="guess-input"
+                disabled={gameOutcome !== 0}
                 type="text"
                 value={currentGuess}
                 onChange={(event) => {

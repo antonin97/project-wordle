@@ -3,8 +3,7 @@ import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
 import { range } from "../../utils";
 import Guess from "../Guess";
 
-function UserGuesses({ guesses }) {
-    console.log(guesses);
+function UserGuesses({ guesses, answer }) {
 
     return (
         <div className="guess-results">
@@ -13,7 +12,8 @@ function UserGuesses({ guesses }) {
                     return (
                         <Guess
                             key={i}
-                            currentGuess={guesses[i] ? guesses[i] : null}
+                            answer={answer}
+                            currentGuess={guesses[i] ? guesses[i].guess : null}
                         />
                     );
                 })}
